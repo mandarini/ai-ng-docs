@@ -56,7 +56,7 @@ You need API keys for OpenAI and Supabase. So, you need to fill in the following
 
 ### To generate embeddings
 
-- Run the script: `npx tsx tools/embeddings/src/index.ts`
+- Run the script: `nx run embeddings:create`
 
 ## Useful links
 
