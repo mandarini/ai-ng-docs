@@ -1,0 +1,66 @@
+{
+  "name": "ai-chat",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "ai-ng-docs",
+  "sourceRoot": "apps/ai-chat/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ai-chat",
+        "index": "apps/ai-chat/src/index.html",
+        "browser": "apps/ai-chat/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/ai-chat/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/ai-chat/src/favicon.ico", "apps/ai-chat/src/assets"],
+        "styles": ["apps/ai-chat/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "ai-chat:build:production"
+        },
+        "development": {
+          "buildTarget": "ai-chat:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ai-chat:build"
+      }
+    }
+  }
+}
