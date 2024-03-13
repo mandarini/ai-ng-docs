@@ -1,0 +1,24 @@
+{
+  "name": "ai-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ai-api/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ai-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ai-api:build:development"
+        },
+        "production": {
+          "buildTarget": "ai-api:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
