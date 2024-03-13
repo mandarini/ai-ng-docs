@@ -1,0 +1,8 @@
+{
+  "name": "embeddings",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/embeddings/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

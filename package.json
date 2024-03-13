@@ -55,17 +55,23 @@
     "@typescript-eslint/parser": "^6.13.2",
     "eslint": "~8.48.0",
     "eslint-config-prettier": "^9.0.0",
+    "github-slugger": "^2.0.0",
     "gpt3-tokenizer": "^1.1.5",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
     "jest-preset-angular": "~13.1.4",
+    "mdast-util-from-markdown": "^2.0.0",
+    "mdast-util-to-markdown": "^2.1.0",
+    "mdast-util-to-string": "^4.0.0",
     "nx": "18.0.8",
     "openai": "^4.29.0",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.3.2",
-    "webpack-cli": "^5.1.4"
+    "unist-builder": "^4.0.0",
+    "webpack-cli": "^5.1.4",
+    "yargs": "^17.7.2"
   }
 }
