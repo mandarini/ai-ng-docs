@@ -4,15 +4,20 @@
     #box
     required
     (keyup.enter)="onEnter(box.value)"
-    [disabled]="loading"
+    [disabled]="(response$ | async)?.loading"
   />
-  <button (click)="onEnter(box.value)" [disabled]="loading">Submit</button>
+  <button
+    (click)="onEnter(box.value)"
+    [disabled]="(response$ | async)?.loading"
+  >
+    Submit
+  </button>
 </div>
-<div *ngIf="loading; else content">
-  <p class="loading">Thinking...</p>
+
+<div *ngIf="(response$ | async)?.loading" class="loading-indicator">
+  Loading...
 </div>
-<ng-template #content>
-  <div class="response-box">
-    <p>{{ (aiResponse$ | async)?.message }}</p>
-  </div>
-</ng-template>
+
+<div *ngIf="!(response$ | async)?.loading" class="response-box">
+  <p>{{ (response$ | async)?.data }}</p>
+</div>

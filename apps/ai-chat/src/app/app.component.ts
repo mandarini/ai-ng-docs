@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
 import { QueryService } from './query.service';
-import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   imports: [RouterModule, CommonModule],
@@ -12,17 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  aiResponse$: Observable<{ message: string }> | undefined;
-  loading = false;
+  response$:
+    | Observable<{
+        loading: boolean;
+        data?: string;
+      }>
+    | undefined;
+
   constructor(private queryService: QueryService) {}
 
-  onEnter(msg: string): void {
-    if (msg) {
-      this.loading = true;
-      this.aiResponse$ = this.queryService.sendQuery(msg).pipe((msg) => {
-        this.loading = false;
-        return msg;
-      });
-    }
+  onEnter(query: string): void {
+    this.response$ = this.queryService.sendQuery(query);
   }
 }
