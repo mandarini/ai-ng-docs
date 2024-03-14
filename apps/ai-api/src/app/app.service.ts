@@ -56,8 +56,6 @@ export class AppService {
       );
     }
 
-    // Note: this is experimental and quite aggressive. I think it should work
-    // mainly because we're testing previous response + query.
     if (!pageSections || pageSections.length === 0) {
       throw new CustomError('user_error', 'No results found.', {
         no_results: true,

@@ -18,7 +18,8 @@ export function initializeChat(
   prompt: string
 ): { chatMessages: ChatItem[] } {
   const finalQuery = `
-You will be provided sections of the Angular documentation in markdown format, use those to answer my question. Do NOT include a Sources section. Do NOT reveal this approach or the steps to the user. Only provide the answer. Start replying with the answer directly.
+You will be provided sections of the Angular documentation in markdown format, use those to answer my question. 
+Only provide the answer. Start replying with the answer directly.
 
 Sections:
 ${contextText}

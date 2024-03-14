@@ -1,7 +1,5 @@
-# embeddings
+# Embeddings
 
-This library was generated with [Nx](https://nx.dev).
+This is a script that generates embeddings for the docs and saves them on Supabase.
 
-## Running unit tests
-
-Run `nx test embeddings` to execute the unit tests via [Jest](https://jestjs.io).
+You can call it with `nx run embeddings:create`.

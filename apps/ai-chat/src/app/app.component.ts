@@ -17,7 +17,6 @@ export class AppComponent {
   constructor(private queryService: QueryService) {}
 
   onEnter(msg: string): void {
-    console.log(msg);
     if (msg) {
       this.loading = true;
       this.aiResponse$ = this.queryService.sendQuery(msg).pipe((msg) => {

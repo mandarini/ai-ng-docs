@@ -13,10 +13,8 @@ export async function readFilePaths(directoryPath) {
     for (const dirent of entries) {
       const entryPath = join(resolvedDirectoryPath, dirent.name);
       if (dirent.isDirectory()) {
-        // If the entry is a directory, recursively read its contents
         await readDirectory(entryPath);
       } else {
-        // If the entry is a file, add its path to the array
         filePaths.push(entryPath);
       }
     }

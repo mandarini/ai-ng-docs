@@ -77,23 +77,3 @@ export interface ChatItem {
   role: 'system' | 'user' | 'assistant' | 'function';
   content: string;
 }
-
-export interface ErrorResponse {
-  message: string;
-  data?: any;
-}
-
-export function extractErrorMessage(err: unknown): ErrorResponse {
-  if (err instanceof CustomError) {
-    return { message: err.message, data: err.data };
-  }
-
-  if (typeof err === 'object' && err !== null) {
-    const errorObj = err as { [key: string]: any };
-    const message =
-      errorObj['message'] || errorObj['error']?.message || 'Unknown error';
-    return { message, data: errorObj['data'] || null };
-  }
-
-  return { message: 'Unknown error' };
-}

@@ -26,11 +26,7 @@ type Section = {
 dotenv.config({ path: 'tools/embeddings/.env' });
 
 /**
- * Splits a `mdast` tree into multiple trees based on
- * a predicate function. Will include the splitting node
- * at the beginning of each tree.
- *
- * Useful to split a markdown file into smaller sections.
+ * Splits a markdown file into smaller sections.
  */
 export function splitTreeBy(tree: any, predicate: (node: any) => boolean) {
   return tree.children.reduce((trees: any, node: any) => {
@@ -190,7 +186,6 @@ export async function generateEmbeddings() {
         .maybeSingle();
 
       if (fetchPageError) {
-        // throw fetchPageError
         console.error(fetchPageError);
       }
 
@@ -277,7 +272,7 @@ export async function generateEmbeddings() {
             throw insertPageSectionError;
           }
           // Add delay after each request
-          await delay(500); // delay of 0.5 second
+          await delay(500);
         } catch (err) {
           console.error(
             `Failed to generate embeddings for '${path}' page section starting with '${input.slice(
