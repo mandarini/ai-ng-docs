@@ -69,3 +69,7 @@ You need API keys for OpenAI and Supabase. So, you need to fill in the following
 - [OpenAI API Node lib reference](https://platform.openai.com/docs/libraries/node-js-library)
 - [Supabase vector search guide](https://supabase.com/docs/guides/ai/examples/nextjs-vector-search)
 - [Assistants API blog post](https://pakotinia.medium.com/openais-assistants-api-a-hands-on-demo-110a861cf2d0)
+
+## Note
+
+This repo contains the final code from the ng-conf 2024 workshop by Katerina Skroumpelou. You can find the starter version here: [https://github.com/mandarini/ai-ng-docs-starter](https://github.com/mandarini/ai-ng-docs-starter).
