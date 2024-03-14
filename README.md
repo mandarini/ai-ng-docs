@@ -56,6 +56,7 @@ You need API keys for OpenAI and Supabase. So, you need to fill in the following
 
 ### To generate embeddings
 
+- Add the docs directory in your [.env](tools/embeddings/.env) file.
 - Run the script: `nx run embeddings:create`
 
 ## Useful links
