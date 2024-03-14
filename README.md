@@ -23,7 +23,6 @@ You can read more about it in our blog post:
 
 ## Contents
 
-- All the docs copied from the [Angular repo](https://github.com/angular/angular) in the `docs` folder.
 - A [script](tools/embeddings/src/lib/embeddings.ts) to create embeddings from the Angular docs and then save these embeddings on Supabase. Here's what it does:
   - Splits each markdown file into sections, based on the markdown headings.
   - Creates an embedding for each section using the `text-embedding-ada-002` model from `openai`.
